@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/congn/ontologies/2021/7/untitled-ontology-49#"
+     xml:base="http://www.semanticweb.org/congn/ontologies/2021/7/untitled-ontology-49"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:so="http://eao.onl/ontologies/so.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dcam="http://purl.org/dc/dcam/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://eao.onl/ontologies/so.owl">
+        <owl:versionIRI rdf:resource="http://eao.onl/ontologies/so.owl/0.1"/>
+        <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eao.onl/ontologies/so.owl#has_knowledge_field -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/so.owl#has_knowledge_field">
+        <rdfs:domain rdf:resource="http://eao.onl/ontologies/so.owl#role"/>
+        <rdfs:range rdf:resource="http://eao.onl/ontologies/so.owl#knowledge_field"/>
+        <rdfs:label>has knowledge field</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/so.owl#has_learning_resource -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/so.owl#has_learning_resource">
+        <rdfs:range rdf:resource="http://eao.onl/ontologies/so.owl#learning_resource"/>
+        <rdfs:label>has learning resource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/so.owl#has_skill -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/so.owl#has_skill">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://eao.onl/ontologies/so.owl#knowledge_field"/>
+        <rdfs:range rdf:resource="http://eao.onl/ontologies/so.owl#skill"/>
+        <rdfs:label>has skill</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eao.onl/ontologies/so.owl#knowledge_field -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/so.owl#knowledge_field">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/so.owl#has_skill"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/so.owl#skill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>a specialisation of knowledge needed to perform responsibilities of a role</rdfs:comment>
+        <rdfs:label>knowledge field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/so.owl#learning_resource -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/so.owl#learning_resource">
+        <rdfs:label>learning resource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/so.owl#role -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/so.owl#role">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/so.owl#has_knowledge_field"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/so.owl#knowledge_field"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Represents the responsibility for performing specific behavior, to which an actor can be assigned, or the part an actor plays in a particular action or event.</rdfs:comment>
+        <rdfs:label>role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/so.owl#skill -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/so.owl#skill">
+        <rdfs:comment>Ability needed to fulfill a role&apos;s responsiblity.</rdfs:comment>
+        <rdfs:label>skill</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://eao.onl/ontologies/so.owl#knowledge_field"/>
+            <rdf:Description rdf:about="http://eao.onl/ontologies/so.owl#role"/>
+            <rdf:Description rdf:about="http://eao.onl/ontologies/so.owl#skill"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
